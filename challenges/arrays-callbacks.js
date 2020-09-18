@@ -33,7 +33,9 @@ console.log(displayNames);
 The zoos need a list of all their animal's names (animal_name only) converted to lower case. Using map, create a new array of strings named lowCaseAnimalNames, each string following this pattern: "jackal, asiatic". Log the resut.
 
 */
-const lowCaseAnimalNames =zooAnimals.map(animal_name => console.log(animal_name.toLowerCase()));
+const lowCaseAnimalNames =zooAnimals.map(function(item){
+  return item.animal_name.toLowerCase();
+});
 
 console.log(lowCaseAnimalNames);
 
@@ -42,9 +44,8 @@ console.log(lowCaseAnimalNames);
 The zoos are concerned about animals with a lower population count. Using filter, create a new array of objects called lowPopulationAnimals which contains only the animals with a population less than 5.
 
 */
-const lowPopulationAnimals= zooAnimals.filter(function(){
-if ( zooAnimals.population > 5);
-return lowPopulationAnimals
+const lowPopulationAnimals= zooAnimals.filter(function(item){
+return item.population < 5;
 });
 console.log(lowPopulationAnimals);
 
@@ -54,8 +55,8 @@ The zoos need to know their total animal population across the United States. Fi
 
 */
 let populationTotal = 0;
-const singleValue = array.reduce(function(accumulator, zooAnimals){
-  return accumulator + zooAnimals.population;
+const singleValue = zooAnimals.reduce(function(accumulator, item){
+  return accumulator + item.population;
   }, 0);
   
 console.log(populationTotal);
@@ -90,7 +91,7 @@ return `Hello ${a}, ${b} nice to meet you!`
 }
 /* Step 3: Check your work by un-commenting the following calls to consume(): */
  console.log(consume(2, 2, add)); // 4
-console.log(consume(10, 16, multiply)); // 160
+ console.log(consume(10, 16, multiply)); // 160
  console.log(consume("Mary", "Poppins", greeting)); // Hello Mary Poppins, nice to meet you!
 
 
