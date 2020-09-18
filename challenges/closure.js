@@ -16,9 +16,14 @@ function myFunction() {
 }
 myFunction();
 
-// Explanation: 
+// Explanation: the constant is created within the context of the greater function, allowing things within that function to access it
 
 
 /* Task 2: Counter */
 
 /* Create a function called `summation` that accepts a parameter and uses a counter to return the summation of that number. For example, `summation(4)` should return 10 because 1+2+3+4 is 10. */
+function summation(num){
+for( i=0; i< num; i++)
+return i+=num
+}
+console.log(summation(4))
